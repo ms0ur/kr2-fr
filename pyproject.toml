@@ -1,0 +1,11 @@
+# manage.py добавляет эту же папку в путь поиска Python при запуске Django.
+[tool.pyright]
+include = ["ice_skating"]
+typeCheckingMode = "basic"
+venvPath = "."
+venv = ".venv"
+executionEnvironments = [{ root = "ice_skating" }]
+
+[tool.ty.environment]
+root = ["./ice_skating"]
+python = "./.venv"

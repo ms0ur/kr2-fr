@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Катки · Сеансы катка{% endblock %}
+{% block content %}
+<h1>Наши катки</h1>
+<p>Арены для семейного отдыха, первых шагов и тренировок.</p>
+<div class="cards">
+{% for rink in rinks %}
+  <article class="card"><h2>{{ rink.name }}</h2><p>{{ rink.rink_kind|capfirst }}</p><p>Вместимость: <strong>{{ rink.capacity }} человек</strong></p></article>
+{% empty %}<p class="empty">Катки пока не добавлены.</p>{% endfor %}
+</div>
+{% endblock %}

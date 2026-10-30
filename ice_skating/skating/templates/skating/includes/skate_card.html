@@ -1,0 +1,11 @@
+<article class="card">
+  <p class="eyebrow">{{ session.session_kind|upper }}</p>
+  <h2><a href="{% url 'skating:detail' session.slug %}" title="{{ session.title }}">{{ session.title|truncatechars:30 }}</a></h2>
+  <p>{{ session.start_date|date:"d.m.Y" }} · {{ session.start_date|date:"H:i" }} · {{ session.duration }} мин.</p>
+  <p>{{ session.rink_name|default:"Каток не указан" }}</p>
+  <p>Посетителей: <strong>{{ session.skaters }}</strong></p>
+  {% include 'skating/includes/status.html' %}
+  <button type="button" class="secondary" data-toggle="extra-{{ session.id }}" aria-expanded="false" hidden>Подробнее о катке</button>
+  <div id="extra-{{ session.id }}" class="extra"><p>Вместимость: {{ session.capacity }} человек. Тип катка: {{ session.rink_kind }}.</p></div>
+  <a class="detail-link" href="{% url 'skating:detail' session.slug %}">Открыть сеанс →</a>
+</article>

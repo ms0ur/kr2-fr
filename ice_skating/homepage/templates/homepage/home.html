@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Расписание ледовых арен</p>
+  <h1>Сеансы катка</h1>
+  <p>Выберите сеанс для отдыха или тренировки. Посмотрите расписание, количество посетителей и информацию о катках.</p>
+  <p class="count">Всего сеансов: {{ total }}.</p>
+  <div class="actions"><a class="button" href="{% url 'skating:list' %}">Посмотреть сеансы</a><a href="{% url 'rinks:list' %}">Наши катки →</a></div>
+</section>
+{% endblock %}

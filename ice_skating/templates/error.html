@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Не удалось открыть страницу{% endblock %}
+{% block content %}<h1>Не удалось открыть страницу</h1><p class="empty">{{ message }}</p><a href="{% url 'skating:list' %}">Вернуться к сеансам</a>{% endblock %}

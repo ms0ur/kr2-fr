@@ -1,0 +1,7 @@
+{% if session.status == 'запланирован' %}
+<p class="badge planned">Запланирован · Билеты в кассах</p>
+{% elif session.status == 'идёт' %}
+<p class="badge live">Идёт · Лёд открыт</p>
+{% elif session.status == 'завершён' %}
+<p class="badge finished">Завершён · Сеанс завершён</p>
+{% endif %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ session.title }} · Сеансы катка{% endblock %}
+{% block content %}
+<a href="{% url 'skating:list' %}">← К списку сеансов</a>
+<article class="card session-detail">
+  <p class="eyebrow">{{ session.session_kind|upper }}</p>
+  <h1>{{ session.title }}</h1>
+  {% include 'skating/includes/status.html' %}
+  <dl>
+    <dt>Начало</dt><dd>{{ session.start_date|date:"d.m.Y H:i" }}</dd>
+    <dt>Продолжительность</dt><dd>{{ session.duration }} минут</dd>
+    <dt>Посетители</dt><dd>{{ session.skaters }} человек</dd>
+    <dt>Каток</dt><dd>{{ session.rink_name|default:"Каток не указан" }}</dd>
+    <dt>Вместимость</dt><dd>{{ session.capacity }} человек</dd>
+    <dt>Тип катка</dt><dd>{{ session.rink_kind }}</dd>
+  </dl>
+</article>
+{% endblock %}
